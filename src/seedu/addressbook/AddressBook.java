@@ -207,6 +207,7 @@ public class AddressBook {
 	private static final int NULL_ARGUMENT = 0;
 
 	private static final int ZERO = 0;
+	private static final int TWO = 2;
 
     /*
      * NOTE : =============================================================
@@ -424,8 +425,8 @@ public class AddressBook {
      * @return  size 2 array; first element is the command type and second element is the arguments string
      */
     private static String[] splitCommandWordAndArgs(String rawUserInput) {
-        final String[] split =  rawUserInput.trim().split("\\s+", 2);
-        return split.length == 2 ? split : new String[] { split[0] , "" }; // else case: no parameters
+        final String[] split =  rawUserInput.trim().split("\\s+", TWO);
+        return split.length == TWO ? split : new String[] { split[0] , "" }; // else case: no parameters
     }
 
     /**
