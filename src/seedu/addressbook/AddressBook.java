@@ -22,6 +22,7 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.PrimitiveIterator.OfDouble;
 
 /*
  * NOTE : =============================================================
@@ -183,6 +184,8 @@ public class AddressBook {
      */
     private static final ArrayList<String[]> ALL_PERSONS = new ArrayList<>();
 
+
+
     /**
      * Stores the most recent list of persons shown to the user as a result of a user command.
      * This is a subset of the full list. Deleting persons in the pull list does not delete
@@ -194,6 +197,14 @@ public class AddressBook {
      * The path to the file used for storing person data.
      */
     private static String storageFilePath;
+    
+	/* 
+	 * NOTE : =============================================================================================
+	 *     Number of arguments while reading input.
+	 * ====================================================================================================
+	 */
+	private static final int SINGLE_ARGUMENT = 1;
+	private static final int NULL_ARGUMENT = 0;
 
     /*
      * NOTE : =============================================================
@@ -257,16 +268,16 @@ public class AddressBook {
      * @param args full program arguments passed to application main method
      */
     private static void processProgramArgs(String[] args) {
-        if (args.length >= 2) {
+        if (args.length > SINGLE_ARGUMENT) {
             showToUser(MESSAGE_INVALID_PROGRAM_ARGS);
             exitProgram();
         }
 
-        if (args.length == 1) {
+        if (args.length == SINGLE_ARGUMENT) {
             setupGivenFileForStorage(args[0]);
         }
 
-        if(args.length == 0) {
+        if (args.length == NULL_ARGUMENT) {
             setupDefaultFileForStorage();
         }
     }
