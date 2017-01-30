@@ -271,13 +271,9 @@ public class AddressBook {
         if (args.length > SINGLE_ARGUMENT) {
             showToUser(MESSAGE_INVALID_PROGRAM_ARGS);
             exitProgram();
-        }
-
-        if (args.length == SINGLE_ARGUMENT) {
+        } else if (args.length == SINGLE_ARGUMENT) {
             setupGivenFileForStorage(args[0]);
-        }
-
-        if (args.length == NULL_ARGUMENT) {
+        } else if (args.length == NULL_ARGUMENT) {
             setupDefaultFileForStorage();
         }
     }
