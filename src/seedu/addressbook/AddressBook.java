@@ -290,7 +290,7 @@ public class AddressBook {
             exitProgram();
         } else {
         	storageFilePath = filePath;
-        	createFileIfMissing(filePath);
+        	createFileIfMissing(storageFilePath);
         }
     }
 
