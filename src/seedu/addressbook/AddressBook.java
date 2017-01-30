@@ -206,6 +206,8 @@ public class AddressBook {
 	private static final int SINGLE_ARGUMENT = 1;
 	private static final int NULL_ARGUMENT = 0;
 
+	private static final int ZERO = 0;
+
     /*
      * NOTE : =============================================================
      * Notice how this method solves the whole problem at a very high level.
@@ -356,7 +358,7 @@ public class AddressBook {
      */
     private static boolean hasValidFileName(Path filePath) {
         
-    	if (filePath.getFileName().toString().lastIndexOf('.') > 0) {
+    	if (filePath.getFileName().toString().lastIndexOf('.') > ZERO) {
         	return true;
         }
         
