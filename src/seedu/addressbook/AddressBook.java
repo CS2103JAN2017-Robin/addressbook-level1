@@ -328,7 +328,16 @@ public class AddressBook {
         } catch (InvalidPathException ipe) {
             return false;
         }
-        return hasValidParentDirectory(filePathToValidate) && hasValidFileName(filePathToValidate);
+        
+        if (hasValidParentDirectory(filePathToValidate) == false) {
+        	return false;
+        }
+        
+        if (hasValidFileName(filePathToValidate) == false) {
+        	return false;
+        }
+        
+        return true;
     }
 
     /**
