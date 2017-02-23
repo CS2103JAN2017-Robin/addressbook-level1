@@ -222,7 +222,7 @@ public class AddressBook {
             setupDefaultFileForStorage();
         }
         
-        loadDataFromStorage();
+        initialiseAddressBookModel(loadPersonsFromFile(storageFilePath));
         while (true) {
             String userCommand = getUserInput();
             echoUserCommand(userCommand);
@@ -331,13 +331,6 @@ public class AddressBook {
                 && (!Files.exists(filePath) || Files.isRegularFile(filePath));
     }
 
-    /**
-     * Initialises the in-memory data using the storage file.
-     * Assumption: The file exists.
-     */
-    private static void loadDataFromStorage() {
-        initialiseAddressBookModel(loadPersonsFromFile(storageFilePath));
-    }
 
 
     /*
